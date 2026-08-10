@@ -1,32 +1,20 @@
 # Shurangan Cultural Academy — Frontend
 
-A modern English-language frontend for **Shurangan Cultural Academy**, inspired by the cultural disciplines of Bangladesh without using Bengali typography or Bengali-language UI.
-
-## Cultural focus
-- Rabindra Sangeet
-- Nazrul Geeti
-- Bangladeshi folk music
-- Bangladeshi folk and classical dance
-- Recitation and theatre
-- Visual arts
-- Cultural studies
+This version intentionally preserves the original modern academy layout and visual character while using **English UI text only**. The cultural identity comes from the content: Rabindra Sangeet, Nazrul Geeti, Baul and Bengali folk music, Bengali folk dance, recitation, theatre and visual arts.
 
 ## Included
-- Responsive academy landing page
-- Login and Sign Up modal
-- Role selection during registration: Student, Teacher, System Admin
+- Responsive HTML/CSS/Tailwind frontend
+- Login + Sign Up
+- Role selection: Student / Teacher / System Admin
 - Automatic role-based dashboard after login
 - Student: Overview, Attendance, Exams & Results, Payments, Profile
 - Teacher: Overview, My Batches, Student Attendance, Classes & Schedule, Profile
 - System Admin: Overview, User Management, Programs & Batches, Payments & Reports, System Settings
-- Frontend-only demo authentication using localStorage
+- localStorage demo authentication
 
 ## Demo accounts
-- Student: student@shurangan.bd / 123456
-- Teacher: teacher@shurangan.bd / 123456
-- System Admin: admin@shurangan.bd / 123456
+- student@shurangan.bd / 123456
+- teacher@shurangan.bd / 123456
+- admin@shurangan.bd / 123456
 
-## Run
-Open `index.html` in a browser, or use VS Code Live Server.
-
-The authentication is a frontend prototype. Connect it to the Shurangan backend/Oracle database later for real authentication and live data.
+This is a frontend prototype. Replace localStorage authentication with a secure backend when connecting it to the Oracle database.
