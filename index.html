@@ -3,76 +3,339 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shurangan | Cultural Academy</title>
-  <meta name="description" content="Shurangan Cultural Academy — music, dance, theatre, recitation and visual arts inspired by the rich cultural heritage of Bangladesh.">
+  <title>Shurangan | A Cultural Academy</title>
+  <meta name="description" content="Shurangan — preserving culture, inspiring talent, shaping the future.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { ink:'#24242a', navy:'#20263d', gold:'#c99735', paper:'#f7f7f4', plum:'#5b3b57' }, fontFamily:{ display:['Playfair Display','serif'], sans:['Inter','sans-serif'] } } } };
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wine: '#5b0712',
+            burgundy: '#760b18',
+            gold: '#d9a441',
+            cream: '#faf7f0',
+            ink: '#211817'
+          },
+          fontFamily: {
+            display: ['Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 15px 45px rgba(62, 14, 18, .10)'
+          }
+        }
+      }
+    }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<header id="navbar" class="fixed top-0 z-50 w-full">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-    <a href="#home" class="brand flex items-center gap-3">
-      <div class="brand-mark">S</div><div><div class="brand-title">Shurangan</div><div class="brand-sub">CULTURAL ACADEMY</div></div>
-    </a>
-    <div id="navLinks" class="hidden items-center gap-7 lg:flex">
-      <a class="nav-link active" href="#home">Home</a><a class="nav-link" href="#about">About</a><a class="nav-link" href="#departments">Departments</a><a class="nav-link" href="#programs">Programs</a><a class="nav-link" href="#events">Events</a>
-      <button onclick="openAuth('login')" class="nav-login">Login / Sign Up</button>
-    </div>
-    <button id="menuBtn" class="menu-btn lg:hidden" aria-label="Menu">☰</button>
-  </nav>
-  <div id="mobileMenu" class="hidden border-t border-black/10 bg-white/95 px-6 py-5 backdrop-blur lg:hidden"><div class="flex flex-col gap-4 font-semibold"><a href="#home">Home</a><a href="#about">About</a><a href="#departments">Departments</a><a href="#programs">Programs</a><a href="#events">Events</a><button onclick="openAuth('login')" class="nav-login mt-2">Login / Sign Up</button></div></div>
-</header>
+<body class="bg-cream text-ink">
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 z-50 w-full transition-all duration-300">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="logo-mark">✦</div>
+        <div>
+          <div class="font-display text-2xl font-bold tracking-[.14em] text-white">SHURANGAN</div>
+          <div class="text-[9px] tracking-[.42em] text-gold">A CULTURAL ACADEMY</div>
+        </div>
+      </a>
 
-<main id="home">
-<section class="hero relative overflow-hidden">
-  <div class="hero-grid"></div>
-  <div class="mx-auto grid max-w-7xl gap-12 px-5 pt-36 pb-20 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:pt-44">
-    <div class="relative z-10"><div class="eyebrow"><span></span> MUSIC • DANCE • THEATRE • ART <span></span></div>
-      <h1 class="hero-title mt-7">Where <span>Bangladesh's</span><br>culture comes alive.</h1>
-      <p class="hero-copy mt-6 max-w-2xl">A modern academy for learning, practising and performing the cultural traditions that shape Bangladesh — from Rabindra Sangeet and Nazrul Geeti to folk music, dance, recitation and theatre.</p>
-      <div class="mt-9 flex flex-wrap gap-3"><button onclick="openAuth('signup')" class="primary-btn">Join the Academy <span>→</span></button><a href="#programs" class="secondary-btn">Explore Programs</a></div>
-      <div class="hero-note mt-8">Rooted in heritage. Built for the next generation.</div>
+      <div id="navLinks" class="hidden items-center gap-7 lg:flex">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#departments">Departments</a>
+        <a class="nav-link" href="#programs">Programs</a>
+        <a class="nav-link" href="#events">Events</a>
+        <a class="nav-link" href="#student-portal">Student Portal</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+
+      <button class="hidden rounded-full border border-gold px-5 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-wine lg:block" onclick="openLogin()">
+        ♙ &nbsp; LOGIN
+      </button>
+      <button id="menuBtn" class="rounded-lg border border-white/20 px-3 py-2 text-white lg:hidden">☰</button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-wine/95 px-6 py-5 lg:hidden">
+      <div class="flex flex-col gap-4">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#departments">Departments</a>
+        <a href="#programs">Programs</a><a href="#events">Events</a><a href="#student-portal">Student Portal</a><a href="#contact">Contact</a>
+        <button onclick="openLogin()" class="mt-2 rounded-full border border-gold py-2 text-gold">Login</button>
+      </div>
     </div>
-    <div class="relative z-10 flex items-center justify-center"><div class="hero-art"><div class="art-ring r1"></div><div class="art-ring r2"></div><div class="art-symbol">♪</div><div class="art-lines"></div><div class="art-caption"><span>Rabindra Sangeet</span><b>Bangladesh</b><span>Folk • Dance • Theatre</span></div></div></div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero relative flex min-h-[760px] items-center overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?auto=format&fit=crop&w=2200&q=85')] bg-cover bg-center"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/15"></div>
+      <div class="absolute inset-0 hero-pattern opacity-20"></div>
+
+      <div class="relative mx-auto w-full max-w-7xl px-5 pt-24 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="mb-5 text-sm font-semibold uppercase tracking-[.35em] text-gold">Welcome to Shurangan</p>
+          <h1 class="font-display text-5xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-8xl">
+            Preserving <span class="gold-text">Culture.</span><br>
+            Inspiring <span class="gold-text">Talent.</span>
+          </h1>
+          <p class="mt-7 max-w-xl text-lg leading-8 text-white/80">
+            A vibrant home for music, dance, arts and cultural learning — where tradition meets creativity and every student finds their stage.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href="#programs" class="gold-btn">Explore Programs <span>→</span></a>
+            <a href="#student-portal" class="outline-btn">Join Shurangan</a>
+          </div>
+          <div class="mt-12 flex items-center gap-4 text-sm text-white/60">
+            <span class="h-px w-12 bg-gold"></span>
+            Learn. Perform. Preserve. Inspire.
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">SCROLL <span>↓</span></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="bg-wine text-white">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/15 sm:grid-cols-4 lg:grid-cols-5">
+        <div class="stat"><strong>25+</strong><span>Programs</span></div>
+        <div class="stat"><strong>1500+</strong><span>Students</span></div>
+        <div class="stat"><strong>85+</strong><span>Qualified Teachers</span></div>
+        <div class="stat"><strong>120+</strong><span>Events Organized</span></div>
+        <div class="stat hidden lg:flex"><strong>300+</strong><span>Awards Won</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-2 lg:px-8">
+        <div class="relative">
+          <div class="about-image h-[500px] rounded-[2rem] bg-[url('https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1200&q=85')] bg-cover bg-center shadow-soft"></div>
+          <div class="absolute -bottom-7 -right-3 rounded-2xl bg-wine p-6 text-white shadow-xl sm:right-8">
+            <div class="font-display text-4xl text-gold">15+</div>
+            <div class="text-sm text-white/70">Years of cultural<br>excellence</div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center">
+          <p class="eyebrow">Our Story</p>
+          <h2 class="section-title">Where heritage becomes <em>possibility.</em></h2>
+          <p class="mt-6 leading-8 text-stone-600">
+            Shurangan is a cultural academy dedicated to nurturing artistic expression while keeping timeless traditions alive. Our classrooms, studios and stages bring together passionate learners and experienced mentors.
+          </p>
+          <p class="mt-4 leading-8 text-stone-600">
+            From a first step in dance to a confident performance on stage, we create an environment where discipline, creativity and cultural pride grow together.
+          </p>
+          <div class="mt-8 grid grid-cols-2 gap-5">
+            <div class="feature-mini"><span>✦</span><div><b>Expert Faculty</b><small>Mentors who care</small></div></div>
+            <div class="feature-mini"><span>◈</span><div><b>Rich Tradition</b><small>Culture at heart</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPARTMENTS -->
+    <section id="departments" class="section bg-white">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="section-heading">
+          <p class="eyebrow">Explore</p>
+          <h2 class="section-title">Our <em>Departments</em></h2>
+          <p>Discover a discipline that speaks to you.</p>
+        </div>
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="department-card"><div class="dept-icon">♫</div><h3>Music</h3><p>Rabindra Sangeet, Nazrul Geeti, folk music and live performance.</p><a href="#programs">Explore programs →</a></div>
+          <div class="department-card"><div class="dept-icon">✦</div><h3>Dance</h3><p>Bengali folk dance, classical movement and stage performance.</p><a href="#programs">Explore programs →</a></div>
+          <div class="department-card"><div class="dept-icon">◉</div><h3>Fine Arts</h3><p>Bengal folk art, painting, drawing and visual storytelling.</p><a href="#programs">Explore programs →</a></div>
+          <div class="department-card"><div class="dept-icon">♢</div><h3>Drama</h3><p>Theatre, recitation, acting and stage confidence.</p><a href="#programs">Explore programs →</a></div>
+          <div class="department-card"><div class="dept-icon">▤</div><h3>Cultural Studies</h3><p>Explore the stories, heritage and ideas behind Bangladeshi art.</p><a href="#programs">Explore programs →</a></div>
+          <div class="department-card"><div class="dept-icon">⌁</div><h3>Traditional Arts</h3><p>Learn traditional crafts and artistic practices from Bengal.</p><a href="#programs">Explore programs →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs" class="section">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="section-heading">
+          <p class="eyebrow">Learn With Us</p>
+          <h2 class="section-title">Featured <em>Programs</em></h2>
+        </div>
+        <div class="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+          <article class="program-card">
+            <div class="program-img bg-[url('https://images.unsplash.com/photo-1524650359799-842906ca1c06?auto=format&fit=crop&w=900&q=80')]"></div>
+            <div class="p-6"><span class="tag">MUSIC</span><h3>Rabindra Sangeet</h3><p>Explore the melodies, expression and repertoire of Rabindra Sangeet.</p><div class="program-meta"><span>12 Months</span><span>Beginner → Advanced</span></div><button onclick="showToast('Program details coming soon!')">View Details →</button></div>
+          </article>
+          <article class="program-card">
+            <div class="program-img bg-[url('https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=900&q=80')]"></div>
+            <div class="p-6"><span class="tag">DANCE</span><h3>Bengali Folk Dance</h3><p>Learn traditional Bengali movement, rhythm, expression and stage performance.</p><div class="program-meta"><span>24 Months</span><span>All Levels</span></div><button onclick="showToast('Program details coming soon!')">View Details →</button></div>
+          </article>
+          <article class="program-card">
+            <div class="program-img bg-[url('https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=900&q=80')]"></div>
+            <div class="p-6"><span class="tag">FINE ARTS</span><h3>Bengal Folk Art</h3><p>Discover the colors, stories and visual language of Bengal's artistic traditions.</p><div class="program-meta"><span>12 Months</span><span>All Levels</span></div><button onclick="showToast('Program details coming soon!')">View Details →</button></div>
+          </article>
+        </div>
+        <div class="mt-10 text-center"><button class="text-sm font-bold uppercase tracking-widest text-wine hover:text-gold">View all programs →</button></div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="section bg-wine text-white">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-2 lg:px-8">
+        <div>
+          <p class="eyebrow text-gold">What's Happening</p>
+          <h2 class="section-title text-white">Upcoming <em>Events</em></h2>
+          <p class="mt-5 max-w-xl leading-8 text-white/65">Our academy comes alive beyond the classroom. Join concerts, festivals, exhibitions and student showcases throughout the year.</p>
+          <a href="#contact" class="mt-8 inline-block text-sm font-bold uppercase tracking-widest text-gold">See all events →</a>
+        </div>
+        <div class="space-y-3">
+          <div class="event-row"><div class="date-box"><b>25</b><small>MAY</small></div><div><h3>Bengal Cultural Festival</h3><p>25 May • Main Auditorium</p></div><span>→</span></div>
+          <div class="event-row"><div class="date-box"><b>10</b><small>JUN</small></div><div><h3>Rabindra Sangeet Evening</h3><p>10 June • Music Hall</p></div><span>→</span></div>
+          <div class="event-row"><div class="date-box"><b>18</b><small>JUN</small></div><div><h3>Bengali Folk Dance Festival</h3><p>18 June • Open Stage</p></div><span>→</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHERS -->
+    <section class="section bg-white">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="section-heading">
+          <p class="eyebrow">Meet The Team</p>
+          <h2 class="section-title">Learn from <em>the best.</em></h2>
+        </div>
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="teacher-card"><div class="teacher-avatar bg-[url('https://randomuser.me/api/portraits/women/44.jpg')]"></div><h3>Nusrat Jahan</h3><p>Head • Music Department</p><span>20+ years experience</span></div>
+          <div class="teacher-card"><div class="teacher-avatar bg-[url('https://randomuser.me/api/portraits/men/32.jpg')]"></div><h3>Farhan Ahmed</h3><p>Head • Dance Department</p><span>18+ years experience</span></div>
+          <div class="teacher-card"><div class="teacher-avatar bg-[url('https://randomuser.me/api/portraits/men/45.jpg')]"></div><h3>Tanvir Hasan</h3><p>Drama & Theatre Expert</p><span>15+ years experience</span></div>
+          <div class="teacher-card"><div class="teacher-avatar bg-[url('https://randomuser.me/api/portraits/women/68.jpg')]"></div><h3>Maliha Rahman</h3><p>Fine Arts Instructor</p><span>12+ years experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTAL -->
+    <section id="student-portal" class="section">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="portal-banner">
+          <div class="relative z-10 max-w-2xl">
+            <p class="eyebrow text-gold">Student Portal</p>
+            <h2 class="font-display text-4xl font-semibold text-white sm:text-5xl">Everything your learning journey needs.</h2>
+            <p class="mt-5 leading-8 text-white/70">Access attendance, examinations, results, certificates and fee information from one place.</p>
+            <button onclick="openLogin()" class="gold-btn mt-8">Open Student Portal →</button>
+          </div>
+          <div class="portal-grid">
+            <span>Attendance</span><span>Examinations</span><span>Results</span><span>Certificates</span><span>Payments</span><span>Profile</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section pt-0">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="cta-card">
+          <p class="eyebrow">Begin Your Journey</p>
+          <h2 class="font-display text-4xl font-semibold sm:text-5xl">Your stage is waiting.</h2>
+          <p class="mx-auto mt-4 max-w-xl text-stone-600">Join a community that celebrates creativity, discipline and the beauty of culture.</p>
+          <a href="#contact" class="gold-btn mt-7">Enquire Now →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="bg-[#171313] text-white">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+      <div>
+        <div class="font-display text-2xl tracking-[.12em]">SHURANGAN</div>
+        <div class="mt-1 text-[9px] tracking-[.4em] text-gold">A CULTURAL ACADEMY</div>
+        <p class="mt-5 leading-7 text-white/55">A home for artistic expression, cultural heritage and the next generation of performers.</p>
+      </div>
+      <div><h4 class="footer-title">Quick Links</h4><div class="footer-links"><a href="#about">About Us</a><a href="#departments">Departments</a><a href="#programs">Programs</a><a href="#events">Events</a><a href="#student-portal">Student Portal</a></div></div>
+      <div><h4 class="footer-title">Contact Us</h4><div class="space-y-3 text-sm text-white/55"><p>📍 Culture Road, Heritage City</p><p>☎ +880 98765 43210</p><p>✉ info@shurangan.academy</p><p>◷ Sun – Thu: 9:00 AM – 6:00 PM</p></div></div>
+      <div><h4 class="footer-title">Stay Connected</h4><p class="text-sm leading-6 text-white/55">Get updates about programs, events and student showcases.</p><form id="newsletter" class="mt-5 flex"><input type="email" required placeholder="Your email" class="min-w-0 flex-1 rounded-l-lg bg-white px-4 py-3 text-sm text-black outline-none"><button class="rounded-r-lg bg-gold px-4 font-bold text-wine">→</button></form></div>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-xs text-white/40">© 2026 Shurangan: A Cultural Academy. All rights reserved.</div>
+  </footer>
+
+  <!-- AUTH MODAL -->
+  <div id="loginModal" class="modal hidden">
+    <div class="modal-card auth-card">
+      <button onclick="closeLogin()" class="absolute right-5 top-4 text-2xl text-stone-400 hover:text-wine">×</button>
+      <div class="auth-tabs">
+        <button id="loginTab" class="auth-tab active" onclick="showAuthTab('login')">Login</button>
+        <button id="signupTab" class="auth-tab" onclick="showAuthTab('signup')">Sign Up</button>
+      </div>
+
+      <div id="loginPane">
+        <p class="eyebrow">Academy Portal</p>
+        <h2 class="font-display text-3xl font-semibold text-wine">Welcome back.</h2>
+        <p class="mt-2 text-sm text-stone-500">Sign in to continue to your Shurangan dashboard.</p>
+        <form id="loginForm" class="mt-7 space-y-4">
+          <input required id="loginEmail" type="email" placeholder="Email address" class="form-input">
+          <input required id="loginPassword" type="password" placeholder="Password" class="form-input">
+          <button class="gold-btn w-full justify-center">Sign In</button>
+        </form>
+        <div class="demo-accounts">
+          <b>Demo accounts</b>
+          <span>Student: student@shurangan.bd / 123456</span>
+          <span>Teacher: teacher@shurangan.bd / 123456</span>
+          <span>Admin: admin@shurangan.bd / 123456</span>
+        </div>
+      </div>
+
+      <div id="signupPane" class="hidden">
+        <p class="eyebrow">Join Shurangan</p>
+        <h2 class="font-display text-3xl font-semibold text-wine">Create your account.</h2>
+        <p class="mt-2 text-sm text-stone-500">Choose your role and create an academy account.</p>
+        <form id="signupForm" class="mt-7 space-y-4">
+          <input required id="signupName" type="text" placeholder="Full name" class="form-input">
+          <input required id="signupEmail" type="email" placeholder="Email address" class="form-input">
+          <input required id="signupPassword" type="password" minlength="6" placeholder="Password (6+ characters)" class="form-input">
+          <div>
+            <label class="role-label">Select your role</label>
+            <div class="role-grid">
+              <label class="role-option"><input type="radio" name="role" value="student" checked><span>🎓<b>Student</b><small>Learning & results</small></span></label>
+              <label class="role-option"><input type="radio" name="role" value="teacher"><span>👨‍🏫<b>Teacher</b><small>Classes & students</small></span></label>
+              <label class="role-option"><input type="radio" name="role" value="admin"><span>🛠️<b>System Admin</b><small>Academy management</small></span></label>
+            </div>
+          </div>
+          <button class="gold-btn w-full justify-center">Create Account</button>
+        </form>
+      </div>
+    </div>
   </div>
-</section>
 
-<section class="stats-strip"><div class="mx-auto grid max-w-7xl grid-cols-2 md:grid-cols-4"><div><b>05+</b><span>Departments</span></div><div><b>12+</b><span>Training Programs</span></div><div><b>250+</b><span>Students</span></div><div><b>30+</b><span>Teachers & Artists</span></div></div></section>
+  <!-- ROLE DASHBOARD -->
+  <section id="dashboardView" class="dashboard-view hidden">
+    <div class="dashboard-shell">
+      <aside class="dashboard-sidebar">
+        <div class="dashboard-brand">
+          <div class="logo-mark">✦</div>
+          <div><b>SHURANGAN</b><small>A CULTURAL ACADEMY</small></div>
+        </div>
+        <div class="dashboard-user">
+          <div id="dashAvatar" class="dash-avatar">S</div>
+          <div><b id="dashName">Student</b><small id="dashRole">Student</small></div>
+        </div>
+        <nav id="dashboardNav" class="dashboard-nav"></nav>
+        <button class="dashboard-logout" onclick="logout()">Log out</button>
+      </aside>
+      <main class="dashboard-main">
+        <div class="dashboard-top">
+          <div>
+            <span class="eyebrow">Shurangan Portal</span>
+            <h1 id="dashTitle">Overview</h1>
+            <p id="dashWelcome">Welcome back.</p>
+          </div>
+          <button class="dashboard-home" onclick="returnHome()">← Back to website</button>
+        </div>
+        <div id="dashboardContent"></div>
+      </main>
+    </div>
+  </section>
 
-<section id="about" class="section"><div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-2 lg:px-8"><div><div class="section-kicker">ABOUT SHURANGAN</div><h2 class="section-title">Heritage in practice,<br><em>creativity in motion.</em></h2><p class="body-copy mt-6">Shurangan is a modern cultural academy built around the artistic heritage of Bangladesh. We combine structured training, regular assessment, performances and a strong teacher–student community.</p><p class="body-copy mt-4">Students can explore Rabindra Sangeet, Nazrul Geeti, Baul and folk music, Bengali dance traditions, recitation, theatre and visual arts in a disciplined learning environment.</p><div class="mt-7 grid gap-3 sm:grid-cols-2"><div class="feature"><b>01</b><span>Heritage-focused learning</span></div><div class="feature"><b>02</b><span>Regular assessment</span></div><div class="feature"><b>03</b><span>Stage & cultural events</span></div><div class="feature"><b>04</b><span>Certificates & progress</span></div></div></div><div class="about-art"><div class="about-pattern"></div><div class="about-card"><div class="mini-mark">✦</div><p class="quote">“Culture is not only something we preserve; it is something we continue to create.”</p><p class="mt-3 text-sm text-stone-500">— The Shurangan philosophy</p></div></div></div></section>
-
-<section id="departments" class="section bg-white"><div class="mx-auto max-w-7xl px-5 lg:px-8"><div class="section-heading"><div class="section-kicker">OUR DEPARTMENTS</div><h2 class="section-title">The many <em>voices of culture</em></h2><p>Choose one or more disciplines and grow through guided practice.</p></div><div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-<article class="culture-card"><div class="culture-icon">♫</div><h3>Music</h3><p>Rabindra Sangeet, Nazrul Geeti, Baul, folk and classical music.</p><span>01</span></article>
-<article class="culture-card"><div class="culture-icon">◒</div><h3>Dance</h3><p>Bengali folk dance, classical foundations and creative movement.</p><span>02</span></article>
-<article class="culture-card"><div class="culture-icon">A</div><h3>Recitation & Theatre</h3><p>Poetry, voice, acting, stage presence and theatre practice.</p><span>03</span></article>
-<article class="culture-card"><div class="culture-icon">✎</div><h3>Visual Arts</h3><p>Drawing, painting and creative visual expression.</p><span>04</span></article>
-<article class="culture-card"><div class="culture-icon">◌</div><h3>Folk Heritage</h3><p>Baul traditions, regional arts, folk stories and cultural history.</p><span>05</span></article>
-<article class="culture-card"><div class="culture-icon">✦</div><h3>Cultural Studies</h3><p>Projects and guided study on the history and culture of Bangladesh.</p><span>06</span></article>
-</div></div></section>
-
-<section id="programs" class="section"><div class="mx-auto max-w-7xl px-5 lg:px-8"><div class="section-heading"><div class="section-kicker">PROGRAMS</div><h2 class="section-title">A path made for <em>learning</em></h2></div><div class="mt-12 grid gap-5 lg:grid-cols-3">
-<article class="program-card"><div class="program-top one">R</div><div><span class="program-tag">MUSIC</span><h3>Rabindra Sangeet — Foundation</h3><p>Voice, rhythm, pronunciation and interpretation through selected songs.</p><div class="program-meta"><span>12 months</span><span>Beginner</span></div></div></article>
-<article class="program-card"><div class="program-top two">B</div><div><span class="program-tag">MUSIC</span><h3>Baul & Bengali Folk Music</h3><p>Explore regional folk traditions, repertoire, rhythm and performance.</p><div class="program-meta"><span>8 months</span><span>All levels</span></div></div></article>
-<article class="program-card"><div class="program-top three">D</div><div><span class="program-tag">DANCE</span><h3>Bengali Folk Dance</h3><p>Movement, cultural context, choreography and stage performance.</p><div class="program-meta"><span>8 months</span><span>Beginner</span></div></div></article>
-</div></div></section>
-
-<section id="events" class="section events-section"><div class="mx-auto max-w-7xl px-5 lg:px-8"><div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr]"><div><div class="section-kicker light">EVENTS & ACTIVITIES</div><h2 class="section-title light-title">Meet on stage,<br><em>share the story.</em></h2><p class="mt-5 leading-8 text-white/70">Annual cultural festivals, seasonal performances, student showcases and special workshops bring the academy community together.</p></div><div class="event-list"><div class="event-item"><div class="event-date"><b>25</b><small>Baishakh</small></div><div><b>Annual Cultural Festival</b><span>Main Auditorium • 5:00 PM</span></div><i>→</i></div><div class="event-item"><div class="event-date"><b>08</b><small>Ashar</small></div><div><b>Monsoon Evening & Rabindra Sangeet</b><span>Open Stage • 6:30 PM</span></div><i>→</i></div><div class="event-item"><div class="event-date"><b>12</b><small>Shravan</small></div><div><b>Nazrul Tribute & Recitation Evening</b><span>Seminar Hall • 4:00 PM</span></div><i>→</i></div></div></div></div></section>
-
-<section class="section"><div class="mx-auto max-w-7xl px-5 lg:px-8"><div class="portal-callout"><div><div class="section-kicker">ACADEMY PORTAL</div><h2 class="section-title">One academy.<br><em>Three experiences.</em></h2><p class="body-copy mt-5">Create an account with your role and get a dashboard designed for the work you actually do.</p><button onclick="openAuth('signup')" class="primary-btn mt-7">Create an Account →</button></div><div class="role-preview"><div><span>Student Dashboard</span><b>Attendance • Exams & Results • Payments • Profile</b></div><div><span>Teacher Dashboard</span><b>My Batches • Student Attendance • Classes • Profile</b></div><div><span>System Admin Dashboard</span><b>User Management • Programs & Batches • Reports • Settings</b></div></div></div></div></section>
-</main>
-
-<footer class="footer"><div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-3 lg:px-8"><div><div class="brand footer-brand flex items-center gap-3"><div class="brand-mark">S</div><div><div class="brand-title">Shurangan</div><div class="brand-sub">CULTURAL ACADEMY</div></div></div><p class="mt-5 footer-contact">A fictional academy concept inspired by the cultural richness of Bangladesh.</p></div><div><h4>Explore</h4><div class="footer-links"><a href="#about">About</a><a href="#departments">Departments</a><a href="#programs">Programs</a><a href="#events">Events</a></div></div><div><h4>Portal</h4><div class="footer-links"><a href="javascript:openAuth('login')">Login</a><a href="javascript:openAuth('signup')">Create account</a><span class="footer-contact">Student • Teacher • System Admin</span></div></div></div><div class="footer-bottom">© 2026 Shurangan Cultural Academy • Frontend prototype</div></footer>
-
-<div id="authModal" class="modal hidden"><div class="auth-card"><button class="modal-close" onclick="closeAuth()">×</button><div class="auth-head"><div class="brand-mark small">S</div><div><b>Shurangan Portal</b><span>Secure role-based academy access</span></div></div><div class="auth-tabs"><button id="loginTab" class="active" onclick="switchAuth('login')">Login</button><button id="signupTab" onclick="switchAuth('signup')">Sign Up</button></div>
-<form id="loginForm" class="auth-form"><label>Email or phone<input id="loginIdentifier" required placeholder="you@example.com"></label><label>Password<input id="loginPassword" type="password" required placeholder="••••••••"></label><div class="demo-hint">Demo accounts: student@shurangan.bd / 123456 • teacher@shurangan.bd / 123456 • admin@shurangan.bd / 123456</div><button class="primary-btn" type="submit">Login to Dashboard →</button></form>
-<form id="signupForm" class="auth-form hidden"><label>Full name<input id="signupName" required placeholder="Your name"></label><label>Email<input id="signupEmail" type="email" required placeholder="you@example.com"></label><label>Phone<input id="signupPhone" required placeholder="01XXXXXXXXX"></label><label>Password<input id="signupPassword" type="password" minlength="6" required placeholder="At least 6 characters"></label><label>Choose your role<select id="signupRole" required><option value="">Select a role</option><option value="student">Student</option><option value="teacher">Teacher</option><option value="admin">System Admin</option></select></label><div id="roleDescription" class="role-description">Your selected role determines which dashboard you see after login.</div><button class="primary-btn" type="submit">Create Account & Continue →</button></form></div></div>
-
-<div id="dashboard" class="dashboard hidden"><aside class="dash-sidebar"><div class="dash-brand"><div class="mini-logo">S</div><div><b>Shurangan</b><span>CULTURAL ACADEMY</span></div></div><div id="dashUser" class="dash-user"></div><nav id="dashNav" class="dash-nav"></nav><button class="logout-btn" onclick="logout()">Log out</button></aside><div class="dash-main"><div class="dash-topbar"><button class="back-site" onclick="closeDashboard()">← Back to website</button><span id="dashDate"></span></div><div id="dashContent"></div></div></div>
-<div id="toast" class="toast"></div><script src="app.js"></script>
-</body></html>
+  <div id="toast" class="toast"></div>
+  <button id="topBtn" class="top-btn">↑</button>
+  <script src="app.js"></script>
+</body>
+</html>
