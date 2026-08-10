@@ -86,7 +86,7 @@ const dashboardData = {
   "Student": {
     items: ["Overview","Attendance","Exams & Results","Payments","Profile"],
     title: "Student Dashboard",
-    cards: [["Attendance","92%","Good standing"],["Upcoming Exam","Bangla Cultural Studies","18 Aug 2026"],["Pending Payment","৳ 2,500","Due 15 Aug"]]
+    cards: [["Attendance","92%","Good standing"],["Upcoming Exam","Bengali Music Theory","18 Aug 2026"],["Pending Payment","৳ 2,500","Due 15 Aug"]]
   },
   "Teacher": {
     items: ["Overview","My Batches","Student Attendance","Classes & Schedule","Profile"],

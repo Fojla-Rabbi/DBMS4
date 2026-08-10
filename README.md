@@ -9,7 +9,6 @@ Updated frontend preserving the original wine / burgundy / gold design and overa
 - Bangladeshi Folk & Classical Dance
 - Recitation & Theatre
 - Visual Arts
-- Bangladeshi Cultural Studies
 
 ## Authentication Flow
 **Sign Up → Select Role → Create Account → Login → Automatic Dashboard**
