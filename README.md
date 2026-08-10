@@ -1,38 +1,53 @@
 # Shurangan — A Cultural Academy
 
-This is the original Shurangan frontend design, extended with role-based authentication and dashboards.
+Updated frontend preserving the original wine / burgundy / gold design and overall homepage layout.
 
-## Built with
-- HTML
-- Tailwind CSS CDN
-- Custom CSS
-- Vanilla JavaScript
+## Cultural Academy Content
+- Rabindra Sangeet
+- Nazrul Geeti
+- Bangladeshi Folk Music
+- Bangladeshi Folk & Classical Dance
+- Recitation & Theatre
+- Visual Arts
+- Bangladeshi Cultural Studies
+
+## Authentication Flow
+**Sign Up → Select Role → Create Account → Login → Automatic Dashboard**
+
+Roles:
+- Student
+- Teacher
+- System Admin
+
+Demo accounts are stored in the browser's localStorage. This is frontend-only and can be replaced with the Oracle/API authentication later.
+
+## Role Dashboards
+
+### Student
+- Overview
+- Attendance
+- Exams & Results
+- Payments
+- Profile
+
+### Teacher
+- Overview
+- My Batches
+- Student Attendance
+- Classes & Schedule
+- Profile
+
+### System Admin
+- Overview
+- User Management
+- Programs & Batches
+- Payments & Reports
+- System Settings
 
 ## Run
-Open `index.html` in a browser, or use VS Code Live Server.
+Open `index.html` directly in a browser, or use VS Code Live Server.
 
-## Included
-- Original Shurangan landing page design
-- Bangladeshi cultural content using English UI only
-- Rabindra Sangeet, Nazrul Geeti, Bengali folk music and dance
-- Login + Sign Up
-- Role selection: Student, Teacher, System Admin
-- Automatic role-specific dashboard after login/signup
-- Student: Overview, Attendance, Exams & Results, Payments, Profile
-- Teacher: Overview, My Batches, Student Attendance, Classes & Schedule, Profile
-- System Admin: Overview, User Management, Programs & Batches, Payments & Reports, System Settings
-- Demo authentication using localStorage
-
-## Demo accounts
-
-Student:
-`student@shurangan.bd` / `123456`
-
-Teacher:
-`teacher@shurangan.bd` / `123456`
-
-System Admin:
-`admin@shurangan.bd` / `123456`
-
-## Important
-Authentication is currently a frontend prototype using `localStorage`. For the final project, replace it with backend authentication connected to the Oracle database and the ER/schema designed for Shurangan.
+## Files
+- `index.html` — homepage, authentication UI and dashboards
+- `styles.css` — original styling plus responsive dashboard/auth styles
+- `app.js` — navigation, authentication demo, role dashboards, toast messages
