@@ -48,3 +48,6 @@ Demo accounts are stored in the browser's localStorage. This is frontend-only an
 - `index.html` — homepage, authentication UI and dashboards
 - `styles.css` — original styling plus responsive dashboard/auth styles
 - `app.js` — navigation, authentication demo, role dashboards, toast messages
+
+## Website Link
+https://dbms-4.vercel.app/
